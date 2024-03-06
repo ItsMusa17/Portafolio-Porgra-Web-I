@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Monica Lopez">
+	<link rel="icon" type="imagenes/png" href="imagenes/logo2.png">
+	<style type="text/css">
+		h1{
+			font-size:25px;
+			text-align: center;
+			color: black;
+			font-family: The Hand Extrablack;
+		}
+		th{
+			text-align: left;
+		}
+
+	</style>
+	<title> PRACTICA 1 / FORMS</title>
+</head>
+<body style=" background-color: #ffe5f0">
+	<h1>VENTA EN LINEA</h1>
+	<form method="post" enctype="text/plain">
+		<fieldset style=" width: 70%;  margin: auto;">
+			<legend style="font-size: 150%">Datos del usuario</legend>
+			<table align="center">
+				<thead>
+			<tr >
+				<th>
+					<label for="city">Nombre:</label><br>
+					<input type="text" name="usuario" id="usuario" size="30" maxlength="20" title="nombre del usuario" placeholder="Nombre del usuario" placeholder="Nombre"></th>
+				<th>
+					<label for="city">Apellido paterno:</label><br>
+					<input type="text" name="usuario" id="usuario" size="30" maxlength="20" title="nombre del usuario" placeholder="Apellido paterno del usuario" placeholder="Nombre"></th>
+				<th>
+					<label for="city">Apellido materno:</label><br>
+					<input type="text" name="usuario" id="usuario" size="30" maxlength="20" title="nombre del usuario" placeholder="Apellido materno del usuario" placeholder="Nombre"></th>
+			</tr>
+			<tr >
+				<th>
+					<label for="city">Nombre del usuario:</label><br>
+					<input type="text" name="usuario" id="usuario" size="30" maxlength="20" title="nombre del usuario" placeholder="Nombre del usuario" placeholder="Nombre"></th>
+				<th>
+					<label for="city">Contraseña:</label><br>
+					<input type="text" name="usuario" id="usuario" size="30" maxlength="20" title="nombre del usuario" placeholder="Apellido paterno del usuario" placeholder="Nombre"></th>
+				<th>
+					<label for="city">Fecha de nacimiento:</label><br>
+					<input type="date" name="fecha" id="fecha" width="50px"></th>
+			</tr>
+		</thead>
+			</table>
+		</fieldset>
+
+		<fieldset style=" width: 70%;  margin: auto;">
+			<legend style="font-size: 150%">Datos de facturación</legend>
+			<table align="center">
+				<tr>
+					<th>
+						<label for="pais">País</label>
+						<br>
+						<select name="pais" id="pais" multiple size="4" size="30">
+							<option>México</option>
+							<option>Canadá</option>
+							<option>E.U.A.</option>
+							<option>Alemania</option>
+							<option>Rusia</option>
+							<option>China</option>
+							<option>Francia</option>
+						</select>
+					</th>
+					<th>
+						<label for="city">Ciudad</label>
+						<br>
+						<select name="city" id="city" multiple size="4">
+							<option>San Luis Potosí</option>
+							<option>Guadalajara</option>
+							<option>Guanajuato</option>
+							<option>Morelia</option>
+							<option>Matamoros</option>
+							<option>Mazatlan</option>
+							<option>Ciudad de México</option>
+							<option>Ciudad Juárez</option>
+							<option>Colima</option>
+						</select>
+					</th>
+					<th>
+						<label for="calle">Calle</label>
+						<br>
+						<input type="text" name="calle" id="calle" maxlength="20" size="30" placeholder="Calle" title="Calle">
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<label for="nocasa">Numero de casa</label>
+						<br>
+						<input type="number" name="nocasa" id="nocasa" maxlength="40" size="40" placeholder="Numero Exterior" title="Numero de casa">
+					</th>
+					<th>
+						<label>Colonia</label>
+						<br>
+						<input type="text" name="col" id="col"  maxlength="20" size="30" placeholder="Colonia" title="Colonia">
+					</th>
+					<th>
+						<label for="e-mail">E-mail</label>
+						<br>
+						<input type="text" name="e-mail" id="e-mail"  maxlength="20" size="30" placeholder="E-mail" title="Correo Electronico">
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<label for="rfc">R.F.C.</label>
+						<br>
+						<input type="text" name="rfc" id="rfc"  maxlength="20" size="30" placeholder="R.F.C." title="R.F.C.">
+					</th>
+					<th>
+						<label for="cp">C.P.</label>
+						<br>
+						<input type="number" name="cp" id="cp"  maxlength="30" size="40" placeholder="Código Postal" title="Código Postal">
+					</th>
+					<th>
+						<input type="submit" name="envio" id="envio" value="Enviar">
+						<input type="reset" name="borrar" id="borrar" value="Reestablecer">
+					</th>
+				</tr>
+			</table>
+			
+
+
+			
+		</fieldset>
+	</form>
+</body>
+</html>
