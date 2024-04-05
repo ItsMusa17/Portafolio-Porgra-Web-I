@@ -1,0 +1,53 @@
+/* Estilos Generales */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Color de fondo de la página */
+}
+
+/* Estilos del Cuadro */
+div {
+  width: 90%; /* Ancho del cuadro */
+  height: 70%; /* Altura del cuadro */
+  background-color: orange; /* Color de fondo inicial */
+  border-radius: 20px; /* Esquinas curvas */
+  text-align: center;
+  padding-top: 80px; /* Ajuste del texto */
+  transition: background-color 0.3s, transform 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+/* Estilos del Texto */
+.texto {
+  margin-top: 12%;
+  color: white; /* Color del texto inicial */
+  text-decoration: none;
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  font-size: 250%;
+}
+
+/* Estilos Hover */
+div:hover {
+  background-color: #CEFF25; /* Cambio de color al pasar el ratón */
+  color: grey; /* Cambio de color del texto */
+  transform: skew(-10deg); /* Transformación al pasar el ratón */
+  font-style: italic; /* Cursiva */
+  color: grey;
+}
+
+/* Estilos del Link */
+.texto:hover {
+  color: grey; /* Cambio de color del texto al pasar el ratón */
+}
+
+/* Estilos Click */
+div:active {
+  background-color: #44F814; /* Cambio de color al hacer clic */
+  box-shadow: 15px 15px 15px grey; /* Sombra */
+  font-style: italic; /* Cursiva */
+  border-radius: 20px;
+  transform: skew(-10deg); /* Transformación al hacer clic */
+}
