@@ -1,0 +1,117 @@
+@font-face {
+    font-family: AmaticSC-Regular; 
+    src: url('fuentes/AmaticSC-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: Kalam-Bold; 
+    src: url('fuentes/Kalam-Bold.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: ShadowsIntoLight-Regular; 
+    src: url('fuentes/ShadowsIntoLight-Regular.ttf') format('truetype'); 
+}
+
+#logo{
+	font-family: Kalam-Bold;
+	font-size: 48px;
+    margin: 0 50px;
+}
+.menu {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: #ff96c5;
+    border: 0px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    width: 18%; 
+    margin: 0 5px; 
+    box-sizing: border-box; 
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-family: Kalam-Bold;
+}
+
+.menu:hover {
+    background-color: pink;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  article {
+    flex: 1;
+    margin: 0px 50px;
+    font-size: 26px;
+    font-family: ShadowsIntoLight-Regular;
+  }
+
+  aside {
+    margin-right: 80px;
+    margin-left: -35px;
+    width: 20%; 
+    padding: 20px;
+  }
+
+  #der {
+    order: 2; 
+    background-color: pink; 
+    height: 20px; 
+    border-radius: 10px;
+    color: white;
+}
+
+h1 {
+  text-align: center; /* Añadido */
+  margin-top: 3px;
+}
+
+  input[type="password"],
+  input[type="submit"] {
+    width: 125%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: -20px;
+  }
+
+  input[type="text"]{
+    margin-top: 10px;
+    width: 125%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: -20px;
+  }
+
+  input[type="submit"] {
+    background-color: #ff96c5;
+    color: black;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: pink;
+  }
+
+footer {
+    width: 99%;
+    height: 10%;
+    background-color: #ff96c5;
+    position: fixed;
+    top: 90%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-size: 30px;
+    font-family: AmaticSC-Regular;
+    text-align: center; /* Alinea el texto al centro */
+    color: white;
+}
