@@ -1,0 +1,19 @@
+#principal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: solid red 3px;
+    background-color: pink;
+    padding: 10px;
+    width: 300px; /* Ajusta el ancho del cuadro según sea necesario */
+    height: 300px; /* Establece la misma altura que el ancho para hacerlo cuadrado */
+    border-radius: 3px;
+    font-size: 9vw;
+}
+
+input {
+    border-radius: 3px;
+}
+
