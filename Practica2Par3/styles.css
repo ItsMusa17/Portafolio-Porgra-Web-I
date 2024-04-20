@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vh;
+    text-align: center; /* Centrar los elementos del formulario */
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+h2, h3 {
+    margin-left: 40%;
+    font-size: 1.5vw;
+    color: #333;
+    margin-bottom: 10px; /* Agregar un poco de espacio entre los encabezados y el formulario */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* Reducir el espacio entre etiquetas */
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0 auto 20px; /* Centrar y agregar espacio debajo del campo de texto */
+    display: block; /* Alinear los campos de texto en bloque */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="button"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: pink;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Alinear el botón en bloque */
+    margin: 0 auto; /* Centrar el botón */
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+#parrafo {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
