@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Obtener totales del formulario</title>
+    <link rel="stylesheet" href="estilos.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>	
+</head>
+<script>
+var total;
+function califica()
+    {var total=0;
+    	//Evalua cada pregunta
+    	for (var x=1;x<=4;x++)
+    	{
+        var res=0;
+        var nom="r"+x;
+        var resul=document.getElementsByName(nom);
+        for(var i=0;i<resul.length;i++)
+        {
+            if(resul[i].checked==true)
+                res=parseInt(resul[i].value);
+        }
+        total=total+res;
+        document.getElementById("total").innerHTML="Puntos obtenidos: "+total+" Puntos";
+        }
+        if(total==20)
+        	document.getElementById("comentario").innerHTML="EXCELENTE!!!";
+        else
+        	if(total==15)
+        	document.getElementById("comentario").innerHTML="Regular!!";
+        else
+        	if(total<=15)
+        	document.getElementById("comentario").innerHTML="Estudia un poco más";
+    }
+
+ 
+function generar(){
+
+//Crear un objeto o instancia jsPDF
+var doc = new jsPDF();
+
+//Definir el tamaño de la letra
+doc.setFontSize(40);
+//Color del texto
+doc.setTextColor(9,7,121);
+doc.text(40, 20, "Conceptos basicos");
+doc.setTextColor(17, 122, 209); //Color en formato RGB
+doc.setFontSize(30);
+doc.text(50, 35, "Resultados del test"); //Ubicación, Texto
+doc.setTextColor(0,0,0);
+doc.setFontSize(10);
+doc.text(20, 50, "20 puntos. Muy bien. \r Todas tus respuestas son correctas");
+doc.text(20, 70, "15 puntos. Regular. \r Obtuviste 2 preguntas correctas");
+doc.text(20, 90, "0 puntos. \r Todas tus respuestas son incorrectas");
+
+//doc.addImage(imgData, 'JPEG', 10, 40, 180, 180);
+
+var string = doc.output('datauristring');
+
+$('iframe').attr('src', string);
+
+}
+</script>
+
+<body>
+    <div id="contiene">
+	<h1>Responde la encuesta: </h1>
+	<h2>Tu opinión es importante</h2>
+<div>
+	<form>
+	<ul>
+		<li>1. ¿Qué es la convergencia digital?</li>
+		<input type="radio" name="r1" id="r1" value="0"/>a) La combinación de diferentes tecnologías en un solo dispositivo.<br/>
+		<input type="radio" name="r1" id="r1" value="5"/>b) La fusión de medios de comunicación tradicionales y digitales.<br/>
+		<input type="radio" name="r1" id="r1" value="0"/>c) El proceso de convertir datos analógicos en digitales.<br/>
+		<input type="radio" name="r1" id="r1" value="0"/>d) La integración de sistemas operativos en la nube.<br/>
+		
+		<li>2. ¿Cuál es uno de los beneficios clave de la implementación de gemelos digitales en la industria?</li>
+		<input type="radio" name="r2" id="r2" value="0"/>a) Reducción de la ciberseguridad.<br/>
+		<input type="radio" name="r2" id="r2" value="0"/>b) Mayor complejidad en la gestión de datos.<br/>
+		<input type="radio" name="r2" id="r2" value="5"/>c) Optimización de procesos y operaciones.<br/>
+		<input type="radio" name="r2" id="r2" value="0"/>d) Aumento de los costos de producción.<br/>
+
+		<li>3. ¿Qué tecnologías suelen estar involucradas en la convergencia digital?</li>
+		<input type="radio" name="r3" id="r3" value="0"/>a) Inteligencia artificial y realidad aumentada.<br/>
+		<input type="radio" name="r3" id="r3" value="0"/>b) Realidad virtual y robótica.<br/>
+		<input type="radio" name="r3" id="r3" value="0"/>c) Blockchain y computación cuántica.<br/>
+		<input type="radio" name="r3" id="r3" value="5"/>d) Big data y Internet de las cosas (IoT).<br/>
+
+        <li>4. ¿Cuál es el propósito principal de un gemelo digital en la fabricación?</li>
+		<input type="radio" name="r4" id="r4" value="0"/>a) Mejorar la eficiencia energética.<br/>
+		<input type="radio" name="r4" id="r4" value="5"/>b) Crear una versión virtual de un producto físico.<br/>
+		<input type="radio" name="r4" id="r4" value="0"/>c) Monitorizar las interacciones en redes sociales.<br/>
+		<input type="radio" name="r4" id="r4" value="0"/>d) Optimizar el almacenamiento de datos en la nube.<br/>
+	</ul>
+	</form>
+</div>
+<input type="button" value="Calificar" onclick="califica()">
+<p></p>
+<p id="total">   </p>
+<p id="comentario">   </p>
+<input style="margin-left: 36%" type="button" onclick="generar()" value="Ver resultados"/> <br/>
+<iframe frameborder="0" width="600" height="500"></iframe>
+</div>
+</body>
+</html>
