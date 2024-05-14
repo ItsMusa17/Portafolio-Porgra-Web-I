@@ -1,0 +1,44 @@
+body{
+  background-color: #F04843;
+}
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 15%
+}
+
+/*El carousel se maneja con contenidos sencillos y un formato que permite que las imagenes se adapten de manera adecuada*/
+.carousel-content {
+  display: flex;
+}
+
+.carousel-content img {
+  width: 100%;
+  display: none;
+}
+
+.carousel-content img.active {
+  display: block;
+}
+/*Asi mismo estan los detalles de cada parte de la pagina y decoracion*/
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: 0;
+}
+
+#nextBtn {
+  right: 0;
+}
+
