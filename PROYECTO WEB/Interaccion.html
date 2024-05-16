@@ -1,0 +1,338 @@
+<?php include 'formulario.php'; ?>
+   <!DOCTYPE html>
+    <html lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Situación Actual</title>
+        <link rel="stylesheet" type="text/css" href="estiloIn.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="ObtenerTotales/js/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/jspdf.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/jspdf.plugin.addimage.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/jspdf.plugin.standard_fonts_metrics.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/jspdf.plugin.split_text_to_size.js"></script>
+        <script type="text/javascript" src="ObtenerTotales/jspdf.plugin.from_html.js"></script>    
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['bar']});
+            google.charts.setOnLoadCallback(drawStuff);
+    
+            function drawStuff() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Sectores', 'Porcentaje'],
+                    ["Electronica", 99],
+                    ["Ingenieria y Construcción", 87],
+                    ["Manofactura", 75],
+                    ["Automatizacion", 65],
+                    ['Otros', 45]
+                ]);
+    
+                var options = {
+                    title: 'Sectores que Invertirán en Gemelos digitales en 2024',
+                    width: 900,
+                    legend: { position: 'none' },
+                    chart: { title: 'Sectores', subtitle: 'popularidad por porcentaje' },
+                    bars: 'horizontal',
+                    axes: { x: { 0: { side: 'top', label: 'Porcentaje'} } },
+                    bar: { groupWidth: "90%" }
+                };
+    
+                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <script>
+    var total;
+    function califica()
+        {var total=0;
+            //Evalua cada pregunta
+            for (var x=1;x<=4;x++)
+            {
+            var res=0;
+            var nom="r"+x;
+            var resul=document.getElementsByName(nom);
+            for(var i=0;i<resul.length;i++)
+            {
+                if(resul[i].checked==true)
+                    res=parseInt(resul[i].value);
+            }
+            total=total+res;
+            document.getElementById("total").innerHTML="Obtuviste los siguientes puntos:  "+total+"";
+            }
+            if(total==20)
+                document.getElementById("comentario").innerHTML="Puntaje perfecto";
+            else
+                if(total==15)
+                document.getElementById("comentario").innerHTML="Puntaje regular";
+            else
+                if(total<=15)
+                document.getElementById("comentario").innerHTML="Puntaje bajo";
+        }
+
+     
+    function generar(){
+
+    //Crear un objeto o instancia jsPDF
+    var doc = new jsPDF();
+
+    //Definir el tamaño de la letra
+    doc.setFontSize(20);
+    //Color del texto
+    doc.setTextColor(9,7,121);
+    doc.text(50, 20, "R E T R O A L I M E N T A C I O N");
+    doc.setTextColor(17, 122, 209); //Color en formato RGB
+    doc.setFontSize(13);
+    doc.text(20, 30, "1. ¿Qué es la convergencia digital?\rLa fusión de medios de comunicación tradicionales y digitales.");
+    doc.text(20, 50, "2. ¿Cuál es uno de los beneficios clave de la implementación de gemelos \r digitales en la industria?\r Optimización de procesos y operaciones.");
+    doc.text(20, 70, "3. ¿Qué tecnologías suelen estar involucradas en la convergencia digital?\r Big data y Internet de las cosas (IoT).");
+    doc.text(20, 90, "4. ¿Cuál es el propósito principal de un gemelo digital en la fabricación?\r Crear una versión virtual de un producto físico.");
+    doc.text(20, 110, "5. ¿Cuál es el propósito principal de un gemelo digital en la fabricación?\r Mejorar la eficiencia energética.");
+    doc.text(20, 130, "6. ¿Cuál es el objetivo de la inteligencia artificial en la automatización industrial?\r Optimizar los procesos de producción.");
+    doc.text(20, 150, "7. ¿Cuál es la ventaja principal del uso de robots colaborativos en la manufactura?\r Trabajar de manera segura junto a humanos.");
+    doc.text(20, 170, "8. ¿Qué tecnología se utiliza para mejorar el mantenimiento predictivo en la industria?\r Inteligencia artificial.");
+    doc.text(20, 190, "9. ¿Cuál es la función principal del Internet de las Cosas (IoT) en la fabricación?\r Conectar y monitorizar dispositivos y maquinaria.");
+    doc.text(20, 210, "10. ¿Qué beneficio proporciona la manufactura aditiva en la producción industrial?\r Permitir la creación de piezas complejas y personalizadas.");
+
+    //doc.addImage(imgData, 'JPEG', 10, 40, 180, 180);
+
+    var string = doc.output('datauristring');
+
+    $('iframe').attr('src', string);
+
+    }
+    </script>
+
+
+    <script type="text/javascript">
+        var vsid = "si271632b93c7a2";
+        (function() { 
+        var vsjs = document.createElement('script'); vsjs.type = 'text/javascript'; vsjs.async = true; vsjs.setAttribute('defer', 'defer');
+         vsjs.src = 'https://www.virtualspirits.com/vsa/chat.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vsjs, s);
+        })();
+       </script>
+             
+<body>
+    <div class="cuadro-flotante3"> <h1 style="  font-size: 2.7vw; margin-top: 1.5%"><font color="#45A29E">I</font>NTERACCION</h1></div>
+    <ul class="menu">
+      <li><a style="text-decoration: none; color: #fff;" href="inicio.html">INICIO</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="informacion.html">Informacion</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="impacto.html">Impacto</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="situacionActual.html">Situacion actual</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="vision a futuro.html">Vision a futuro</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="Interaccion.html">Interaccion</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="galeria.html">Galeria</a></li>
+      <li><a style="text-decoration: none; color: #fff;" href="ayuda.html">Ayuda</a></li>
+      <li class="slider"></li>
+    </ul>
+
+
+    <section class="section" style="background-color: #03C0C1; margin-top: 10%; height: 105px">
+        <div class="container text-center">
+            <h2 class="text-light mb-5 font-weight-normal" style="font-size: 2.5vw; margin-top: -4%">N O T I C I A S &nbsp;&nbsp; I M P O R T A N T E</h2>
+        </div>
+    </section>
+
+    <div id="grf" style="margin-top: 1%">
+        <h2 id="subt">Sectores que Invertirán en Gemelos digitales en 2024</h2>
+        <div id="grafico">
+            
+            <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+        </div>
+    </div>
+
+  <section class="section" id="blog" style="margin-top: -5%">
+        <div class="container">
+            <h2 class="mb-5" style="font-size: 1.8vw">Ultimas <font color="#45A29E">Noticias</font></h2>
+            <div class="row">
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imagenes/interaccion1.jpg">
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">10 tendencias tecnológicas que van a transformar las empresas en 2024</h6>
+                        <p style="margin-top: -6%;">Después de que 2023 se erigiera en el año de la IA generativa, la multinacional tecnológica española Plain Concepts, especializada en innovación y apasionada por la tecnología, ha identificado las diez tendencias tecnológicas que en 2024 van a transformar la forma en que las empresas generan valor.</p>
+                        <p><b>IA generativa</b></p>
+                        <p>La IA generativa se ha convertido en la tecnología más influyente del momento y según Plain Concepts, el año que viene se pondrá de manifiesto su impacto a la hora de democratizar el conocimiento y la formación en diferentes roles y funciones comerciales, además de las áreas más técnicas.</p>
+                        <a href="https://www.industriaquimica.es/noticias/20231214/10-tendencias-tecnologicas-que-van-a-transformar-las-empresas-en-2024" class="read-more" style="color: #45A29E">Leer Mas... <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imagenes/interaccion21.jpg" >
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">Pronóstico de Hikvision sobre las tendencias tecnológicas del sector de la seguridad en 2024</h6>
+                        <p style="margin-top: -6%;">El proveedor de soluciones y servicios AIoT enfocados a una amplia variedad de industrias Hikvision ha compartido su pronóstico sobre las principales tendencias tecnológicas que tendrán un impacto significativo en la industria de la seguridad este año 2024. Destacan la inteligencia artificial (IA), el IoT, los servicios en la nube y en el borde, los gemelos digitales, la tecnología de visualización y para impulsar la sostenibilidad ambiental, así como la autenticación de la identidad digital.</p>
+                        <p>De acuerdo con el análisis del sector de la seguridad realizado por Hikvision, a medida que se adopta la innovación tecnológica para cubrir las necesidades de la sociedad, se da una mayor convergencia de tecnologías avanzadas como la IA, el IoT y los macrodatos.</p>
+                        <a href="https://www.esmartcity.es/2024/02/19/pronostico-hikvision-tendencias-tecnologicas-sector-seguridad-2024" class="read-more" style="color: #45A29E">Leer Mas... <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="img-holder">
+                        <img src="imagenes/interaccion3.jpg">
+                    </div>
+                    <div class="content-holder">
+                        <h4 class="title">Tendencias tecnológicas en seguridad 2024: ¿cómo se transforma la industria?</h4>
+                        <p style="margin-top: -6%;"> En años recientes, el rumbo de la seguridad se ha visto marcado por su convergencia con la adopción de nuevas tecnologías. Tales como, el internet de las cosas, inteligencia artificial, macrodatos y otras.</p>
+                        <p> Durante 2024, estas innovaciones continuarán allanando el camino hacia el desarrollo de nuevas soluciones de seguridad, más inteligentes, proactivas, predictivas y sólidas. Ante ello, Hikvision compartió con NotiPress una recopilación de aquellas tendencias que tendrán un impacto significativo en el sector de la ciberseguridad en los próximos 12 meses.</p>
+                        <a href="https://www.mypress.mx/tecnologia/tendencias-tecnologicas-seguridad-2024-como-se-transforma-la-industria-13063" class="read-more" style="color: #45A29E">Leer Mas... <i class="ti-angle-double-right"></i></a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section py-5" style="background-color: #03C0C1; margin-top: -1%; height: 105px">
+        <div class="container text-center">
+            <h2 class="text-light mb-5 font-weight-normal" style="font-size: 2.5vw; margin-top: -3.5%">F O R M U L A R I O</h2>
+        </div>
+    </section>
+
+    <div id="contiene" style="margin-top: ">
+    <form>
+    <ul>
+        <li>1. ¿Qué es la convergencia digital?</li>
+        <input type="radio" name="r1" id="r1" value="0"/>a) La combinación de diferentes tecnologías en un solo dispositivo.<br/>
+        <input type="radio" name="r1" id="r1" value="5"/>b) La fusión de medios de comunicación tradicionales y digitales.<br/>
+        <input type="radio" name="r1" id="r1" value="0"/>c) El proceso de convertir datos analógicos en digitales.<br/>
+        <input type="radio" name="r1" id="r1" value="0"/>d) La integración de sistemas operativos en la nube.<br/>
+        
+        <li>2. ¿Cuál es uno de los beneficios clave de la implementación de gemelos digitales en la industria?</li>
+        <input type="radio" name="r2" id="r2" value="0"/>a) Reducción de la ciberseguridad.<br/>
+        <input type="radio" name="r2" id="r2" value="0"/>b) Mayor complejidad en la gestión de datos.<br/>
+        <input type="radio" name="r2" id="r2" value="5"/>c) Optimización de procesos y operaciones.<br/>
+        <input type="radio" name="r2" id="r2" value="0"/>d) Aumento de los costos de producción.<br/>
+
+        <li>3. ¿Qué tecnologías suelen estar involucradas en la convergencia digital?</li>
+        <input type="radio" name="r3" id="r3" value="0"/>a) Inteligencia artificial y realidad aumentada.<br/>
+        <input type="radio" name="r3" id="r3" value="0"/>b) Realidad virtual y robótica.<br/>
+        <input type="radio" name="r3" id="r3" value="0"/>c) Blockchain y computación cuántica.<br/>
+        <input type="radio" name="r3" id="r3" value="5"/>d) Big data y Internet de las cosas (IoT).<br/>
+
+        <li>4. ¿Cuál es el propósito principal de un gemelo digital en la fabricación?</li>
+        <input type="radio" name="r4" id="r4" value="0"/>a) Mejorar la eficiencia energética.<br/>
+        <input type="radio" name="r4" id="r4" value="5"/>b) Crear una versión virtual de un producto físico.<br/>
+        <input type="radio" name="r4" id="r4" value="0"/>c) Monitorizar las interacciones en redes sociales.<br/>
+        <input type="radio" name="r4" id="r4" value="0"/>d) Optimizar el almacenamiento de datos en la nube.<br/>
+
+        <li>5. ¿Cuál es el propósito principal de un gemelo digital en la fabricación?</li>
+        <input type="radio" name="r5" id="r5" value="5"/>a) Mejorar la eficiencia energética.<br/>
+        <input type="radio" name="r5" id="r5" value="0"/>b) Crear una versión virtual de un producto físico.<br/>
+        <input type="radio" name="r5" id="r5" value="0"/>c) Monitorizar las interacciones en redes sociales.<br/>
+        <input type="radio" name="r5" id="r5" value="0"/>d) Optimizar el almacenamiento de datos en la nube.<br/>
+
+        <li>6. ¿Cuál es el objetivo de la inteligencia artificial en la automatización industrial?</li>
+        <input type="radio" name="r6" id="r6" value="5"/>a) Optimizar los procesos de producción.<br/>
+        <input type="radio" name="r6" id="r6" value="0"/>b) Crear modelos en 3D de las instalaciones.<br/>
+        <input type="radio" name="r6" id="r6" value="0"/>c) Mejorar la gestión de redes sociales.<br/>
+        <input type="radio" name="r6" id="r6" value="0"/>d) Aumentar el almacenamiento en la nube.<br/>
+
+        <li>7. ¿Cuál es la ventaja principal del uso de robots colaborativos en la manufactura?</li>
+        <input type="radio" name="r7" id="r7" value="0"/>a) Reducir la necesidad de energía.<br/>
+        <input type="radio" name="r7" id="r7" value="0"/>b) Minimizar la dependencia del almacenamiento en la nube.<br/>
+        <input type="radio" name="r7" id="r7" value="5"/>c) Trabajar de manera segura junto a humanos.<br/>
+        <input type="radio" name="r7" id="r7" value="0"/>d) Aumentar la cantidad de interacciones en redes sociales.<br/>
+
+        <li>8. ¿Qué tecnología se utiliza para mejorar el mantenimiento predictivo en la industria?</li>
+        <input type="radio" name="r8" id="r8" value="0"/>a) Realidad aumentada.<br/>
+        <input type="radio" name="r8" id="r8" value="0"/>b) Redes sociales.<br/>
+        <input type="radio" name="r8" id="r8" value="5"/>c) Inteligencia artificial.<br/>
+        <input type="radio" name="r8" id="r8" value="0"/>d) Almacenamiento en la nube.<br/>
+
+        <li>9. ¿Cuál es la función principal del Internet de las Cosas (IoT) en la fabricación?</li>
+        <input type="radio" name="r9" id="r9" value="5"/>a) Conectar y monitorizar dispositivos y maquinaria.<br/>
+        <input type="radio" name="r9" id="r9" value="0"/>b) Crear perfiles en redes sociales para empresas.<br/>
+        <input type="radio" name="r9" id="r9" value="0"/>c) Mejorar la eficiencia energética de los edificios.<br/>
+        <input type="radio" name="r9" id="r9" value="0"/>d) Almacenar grandes volúmenes de datos.<br/>
+
+        <li>10. ¿Qué beneficio proporciona la manufactura aditiva en la producción industrial?</li>
+        <input type="radio" name="r10" id="r10" value="0"/>a) Aumentar el uso de energía renovable.<br/>
+        <input type="radio" name="r10" id="r10" value="5"/>b) Permitir la creación de piezas complejas y personalizadas.<br/>
+        <input type="radio" name="r10" id="r10" value="0"/>c) Mejorar la interacción en redes sociales.<br/>
+        <input type="radio" name="r10" id="r10" value="0"/>d) Incrementar el almacenamiento en la nube.<br/>
+    </ul>
+    </form>
+    <div>
+        <input type="button" value="C A L I F I C A R" onclick="califica()">
+        <p></p>
+        <p id="total">   </p>
+        <p id="comentario">   </p>
+        <input type="button" onclick="generar()" value="R E T R O A L I M E N T A C I O N"/> <br/>
+        <iframe frameborder="0" width="600" height="500"></iframe>
+    </div>
+<div>
+
+    <div class="section contact" id="contact" style="background-image:url('imagenes/Fondo1.jpg');">
+        <div class="container" style="margin-top: -3%">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-form-card">
+                        <h4 class="contact-title">Nosotros te contactamos</h4>
+                        <form action="">
+                            <div class="form-group">
+                                <input  class="form-control" type="text" placeholder="Nombre *" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" placeholder="Correo *" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Escribe tu mensaje aqui *" rows="7" required></textarea>
+                            </div>
+                            <div class="form-group ">
+                                <button style="background-color: #03C0C1; color: white" type="submit" class="form-control btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                         
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> 
+
+    
+    <div id="content">
+    <fooetr >
+        <div class="footer" style="width: 100%; margin-top: -5%">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="address">
+                            <h3>D A T O S</h3>
+                            <p>
+                                Urbano Villalón num.500, Col. La Ladrillera 
+                                <br> Tel: +52 (444) 870 - 21 - 00
+                                <br> Email: politecnica@upslp.edu.mx</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="lik">
+
+                            <li> <img src="imagenes/logo.png" alt="#" /></li>
+                            <li> <img src="imagenes/logo2.png" alt="#" /></li>
+                            <li> <img src="imagenes/logo3.png" alt="#" /></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright" style=" margin-bottom: -5% ">
+                <div class="container">
+                    <p>© 2024 Universidad Politecnica de San Luis Potosi</p>
+                </div>
+            </div>
+        </div>
+    </fooetr>
+
+</div>
+
+</body>
+</html>
